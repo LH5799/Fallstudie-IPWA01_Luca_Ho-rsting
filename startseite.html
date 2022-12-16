@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEA - For a better World</title>
+
+
+    <!-- Einbindung der Frameworks Bootstrap und Vue.js sowie die Einbindung der CSS- und JS-Dateien-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.12/vue.js"></script>
+    <script src="https://unpkg.com/bootstrap-vue@2.6.1/dist/bootstrap-vue.min.js"></script>
+
+    <link href="https://unpkg.com/bootstrap-vue@2.6.1/dist/bootstrap-vue.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="./design.css" rel="stylesheet" />
+
+    
+
+    <!-- Exbindung der Bootstrap Icons-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+
+
+    
+</head>
+<body>
+    <header> 
+        <nav class="navbar navbar-expand-lg bg-white">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/startseite.html">
+                  <img src="./Bilder/Logosvg.svg" alt="" width="auto" height="50" class="d-inline-block align-text-center">
+                  WEA
+                </a>
+                <div class="navbar-nav">
+                    <a class="nav-link text-secondary" href="#">Instagram</a>
+                    <a class="nav-link text-secondary" href="#">Facebook</a>
+                    <a class="nav-link text-secondary" href="#">Twitter</a>
+                    <a class="nav-link text-secondary" href="#">Kontakt</a>      
+                </div>            
+              </div>                
+          </nav>
+    </header>
+    
+    <main>
+        <div class="container-fluid">
+            <div class="row flex-wrap">
+                <div class="col-auto col-md-3 col-xl-2 col-lg-2 px-sm-3 col-auto col-1 px-0 bg-white">
+                    <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 min-vh-100">
+                        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">                           
+                            <li>
+                                <a href="startseite.html" class="nav-link px-0 align-middle">
+                                    <i class="fs-4 bi-house icon-farbe"></i> <span class="ms-1 d-none d-sm-inline text-secondary">Startseite</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link px-0 align-middle">
+                                    <i class="fs-4 bi-people icon-farbe"></i> <span class="ms-1 d-none d-sm-inline text-secondary">Über WEA</span></a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link px-0 align-middle">
+                                    <i class="fs-4 bi-bar-chart-fill icon-farbe"></i> <span class="ms-1 d-none d-sm-inline text-secondary">Fakten</span></a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link px-0 align-middle">
+                                    <i class="fs-4 bi-table icon-farbe"></i> <span class="ms-1 d-none d-sm-inline text-secondary">Aktionen</span></a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link px-0 align-middle">
+                                    <i class="fs-4 bi-question-circle-fill icon-farbe"></i> <span class="ms-1 d-none d-sm-inline text-secondary">FAQ</span> </a>
+                            </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+
+                <div class="col py-3 col-11 col-sm-9 col-md-9 col-lg-10 col-xl-10 col-xxl-10 col-auto text-center container">
+                    <!-- Der folgende div-Container hat nichts mit den Anforderungen aus der Fallstudie zutun und dient lediglich zur Optimierung des Aussehens-->
+                    <div class="row">
+                        <div class="col-lg-6 col-md-8 col-auto mx-auto">
+                            <h1 class="fw-light">Der Klimaschutz betrifft uns alle.</h1>
+                            <p class="lead text-secondary">
+                                Wir die WEA - World Economic Association - helfen beim Kampf gegen den Klimawandel. Wie auch du einen entscheidenen Beitrag zum Klimaschutz beitragen kannst, erfährst du hier bei uns.
+                            </p>
+                            <p>
+                                <a href="#" class="btn btn-primary my-2">Wie kann ich helfen?</a>
+                                <a href="#" class="btn btn-secondary my-2">Mehr über die WEA</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="py-5 bg-light">
+                        <div class="col-lg-6 col-md-8 col-sm-9  mx-auto">
+                            <h3 class="fw-light">Fakten</h3>
+                            <hr/>
+                            <div id="app">
+                                <b-input v-model="filter" placeholder="Filter nach Unternehmen oder Ländern"></b-input>
+                                <b-table responsive striped hover :items="items" :fields="fields" :filter="filter"  :filter-included-fields="['unternehmen', 'land']" ></b-table>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+
+
+                </div>
+
+
+
+
+                
+
+               
+            </div>
+        </div>
+
+        <script src="./fallstudie.js"></script>
+    </main>
+
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <p class="col-md-4 p-2 mb-0 text-secondary">
+            © 2022 World Environment Association
+        </p>
+        <a href="#" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+            <img src="./Bilder/Logosvg.svg" alt="" width="auto" height="40">
+        </a>
+        <ul class="nav col-md-4 p-2 justify-content-end">
+            <li class="nav-item">
+                <a href="#" class="nav-link px-2 text-secondary">Datenschutz</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link px-2 text-secondary">Impressum</a>
+            </li>
+        </ul>
+    </footer>
+    
+
+</body>
+
+</html>

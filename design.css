@@ -1,0 +1,47 @@
+.primarfarbe {
+    color: #70AD47,
+}
+
+.icon-farbe {
+    color: #70AD47
+}
+
+.fw-light {
+    color: #262626
+}
+
+.text-secondary {
+    color: #6c757d !important
+}
+
+.btn-primary {
+    background-color: #70AD47 !important;
+    color: #f2f2f2 ;
+    border-color: transparent;
+}
+
+.btn-primary:hover {
+    background-color: #00B050 !important;
+    color: #f2f2f2 !important;
+    border-color: transparent;
+}
+
+.btn-seconday {
+    background-color: #6c757d !important;
+}
+
+.navbar-brand{
+    color:#70AD47
+}
+
+.navbar-brand:hover {
+    color:#595959
+}
+
+.nav-link:hover {
+    background-color: rgba(112, 173, 71, 0.443);
+    border-radius: 10px;
+}
+
+
+
